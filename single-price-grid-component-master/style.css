@@ -1,120 +1,142 @@
 html {
-    box-sizing: border-box;
-    font-family: karla;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  background-color: #f5f7fa;
 }
-
-body{
-    padding:100px;
-}
-
-h2, h4,p{
-    margin:0;
-}
-
 
 *, *::before, *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Card Container */
 #card {
-    width: 600px;
-    height: 400px;
-    box-shadow: 2px 3px 7px 0px rgba(0,0,0, 0.35);
-    border-radius: 5px;
-    overflow: hidden;
-    
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
+/* Top Section */
 #top-section {
-    width: 100%;
-    height: 45%;
-    padding: 20px;
-
+  padding: 30px;
+  background-color: #ffffff;
 }
 
+#top-section h2 {
+  color: hsl(179, 62%, 43%);
+  margin-bottom: 15px;
+}
+
+#top-section h4 {
+  color: hsl(71, 73%, 54%);
+  margin-bottom: 10px;
+}
+
+#top-section p {
+  color: hsl(218, 22%, 67%);
+  line-height: 1.6;
+}
+
+/* Bottom Section (flex layout) */
 #bottom-section {
-    width: 100%;
-    height: 65%;
-    color: white;
-
-    /* ✅ Better layout control */
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
 }
 
-#bottom-left-section, #bottom-right-section {
-    width: 50%;
-    height: 100%;
-    padding: 20px;
-}
-
+/* Left Side */
 #bottom-left-section {
-    background-color:  hsl(179, 62%, 43%);
+  background-color: hsl(179, 62%, 43%);
+  flex: 1 1 300px;
+  padding: 30px;
 }
 
+#bottom-left-section h4 {
+  margin-bottom: 20px;
+}
+
+#price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#price {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#price-frequency {
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+#bottom-left-section p {
+  margin: 20px 0;
+}
+
+button {
+  color: white;
+  background-color: hsl(71, 73%, 54%);
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(71, 73%, 60%);
+  transform: scale(1.03);
+}
+
+/* Right Side */
 #bottom-right-section {
-    background-color:  hsla(179, 79%, 49%, 1.00);
+  background-color: hsl(179, 55%, 50%);
+  flex: 1 1 300px;
+  padding: 30px;
 }
 
-
-#top-section h2{
-    color: #2ab2af;
-    margin-bottom: 30px;
+#bottom-right-section h4 {
+  margin-bottom: 20px;
 }
 
-#top-section h4{
-    color: #c0fd34;
-    padding-bottom:10px;
+ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+  opacity: 0.9;
 }
 
-#top-section p{ 
-    color: #98a6bd;
-}
-
-button{
-    color: white;
-    background-color: #c0fd34;
-    border: none;
+/* Responsive Design */
+@media (max-width: 700px) {
+  body {
     padding: 10px;
-    width: 85%;
-    border-radius: 4px;
-}
+  }
 
-button:hover{
-    curser: pointer;
-    background-color: #b4ff06ff;
-    transform: scale(1.02);
-}
+  #card {
+    width: 100%;
+  }
 
-#price{
-    font-size: 22px;
-    font-weight: 1000;
-}
-#bottom-left-section h4{
-    margin-bottom: 35px;
+  #bottom-section {
+    flex-direction: column;
+  }
 
-}
-
-#bottom-left-section p{
-    font-size: 0.9rem;
-    margin-bottom: 35px;
-}
-
-#price-frequency, #price{
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-#price-frequency{
-    position:relative;
-    top: -3px;
-    opacity: 0.7;
-    margin-left: 4px;
-}
-
-ul{
-    padding: 0;
-    list-style: none;
-    font-size: 1rem;
-    opacity:0.8;
+  #bottom-left-section, 
+  #bottom-right-section {
+    width: 100%;
+  }
 }
